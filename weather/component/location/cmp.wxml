@@ -1,0 +1,4 @@
+<view class="container" catchtap='showInfo' >
+  <text class="city">{{position.city}}</text>
+  <text class="district" space="nbsp">  {{position.district}}</text>
+</view>

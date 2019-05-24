@@ -1,0 +1,29 @@
+/* component/alarm/cmp.wxss */
+.container{
+  width:700rpx;
+  background:#ddd;
+  margin:30rpx 25rpx;
+  border-radius:30rpx;
+  padding:30rpx;
+  box-sizing:border-box;
+  font-style: italic
+}
+
+.title{
+  height:40rpx;
+  line-height: 40rpx;
+  margin-bottom:20rpx;
+  font-weight: bold;
+  color:#222021;
+}
+.info{
+  font-size:30rpx;
+  color:#242023;
+  font-style: initial;
+  text-indent:30rpx;
+}
+
+.info view{
+  line-height:60rpx;
+  height:60rpx;
+}

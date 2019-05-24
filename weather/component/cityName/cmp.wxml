@@ -1,0 +1,2 @@
+<!--component/cityName/cmp.wxml-->
+<text class="cityname">{{cityname}}</text>

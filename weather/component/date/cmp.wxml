@@ -1,0 +1,3 @@
+<view class="container">
+  <text class="day" encode="true" space="nbsp">{{date}}</text>
+</view>

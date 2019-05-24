@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "position":"/component/location/cmp",
+    "date":"/component/date/cmp",
+    "ec-canvas":"../../ec-canvas/ec-canvas",
+    "alarm":"/component/alarm/cmp"
+  }
+}

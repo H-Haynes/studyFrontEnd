@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "city":"/component/cityList/cmp",
+    "cityname":"/component/cityName/cmp"
+
+  }
+}

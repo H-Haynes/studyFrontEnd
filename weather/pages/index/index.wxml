@@ -1,0 +1,84 @@
+
+<scroll-view class="dateList" scroll-left="{{100}}" scroll-x="true" scroll-with-animation="true" scroll-into-view="{{gotowhere}}" style="margin-top:{{(statusBarHeight+45+8)*2}}rpx">
+  <block wx:for="{{weather.data}}" wx:key="{{item.day}}" >
+    <date day="{{item.day}}" class="day" data-index="{{index}}" bindtap="choiceDay"/>
+  </block>
+</scroll-view>
+
+
+
+<view class="wenduInfo" style="background-image:url({{bg}})">
+  <view class="mainInfo">
+      <!-- 如果不是今天那么显示最高温度 -->
+
+      <view class="cityName">{{city}}</view>
+      <view class="wendu">{{nowIndex===0?indexDayWeather.tem:indexDayWeather.tem1}}</view>
+      <view class="rain">{{indexDayWeather.wea}}</view>
+      <view class="wind">
+        <view class="wind-wrap">
+          <view class="wind-dir">{{indexDayWeather.win[0]}}</view>
+          <view class="wind-speed">风力{{indexDayWeather.win_speed}}</view>
+          <view class="humidity" wx:if="{{indexDayWeather.humidity}}">湿度:{{indexDayWeather.humidity}}%</view>
+        </view>
+      </view>
+  </view>
+  <view class="life">
+    <view class="air">
+      <text class="lifeName">空气质量:</text>
+      <text class="lifeInfo">{{indexDayLife[5].level}}</text>
+    </view>
+      <view class="uv">
+        <text class="lifeName">紫外线指数:</text>
+        <text class="lifeInfo">{{indexDayLife[0].level}}</text>
+      </view>
+      <view class="cloth">
+        <text class="lifeName">穿衣指数:</text>
+        <text class="lifeInfo">{{indexDayLife[3].level}}</text>
+      </view>
+      <view class="car">
+        <text class="lifeName">洗车指数:</text>
+        <text class="lifeInfo">{{indexDayLife[4].level}}</text>
+      </view>
+
+ </view>
+ <view class="wenduRange">
+    <view class="maxWendu">最高温度:{{indexDayWeather.tem1}}</view>
+    <view class="minWendu">最低温度:{{indexDayWeather.tem2}}</view>
+ </view>
+
+ <view class="dataFrom">
+    <view class="updateTime">更新时间:<text>{{weather.updateTime}}</text></view>
+    <view class="dataInfo">数据来源:<text class="from">www.tianqiapi.com</text></view>
+ </view>
+</view>
+
+<alarm alarm="{{weather.data[0].alarm}}" />
+
+
+<view class="wenduChange">
+  <view class="lineTitle">24小时气温变化</view>
+  <view class="container" >
+    <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+  </view>
+</view>
+
+<view class="rainMap">
+  <view class="mapTitle">全国降水预报图</view>
+  <swiper class="mapList" indicator-dots="true" autoplay='true' circular="true">
+    <swiper-item wx:for="{{mapList}}" data-index="{{index}}" wx:key="{{item.title}}" catch:tap="showImg">
+      <image src="{{item.pic}}"/>
+    </swiper-item>
+  </swiper>
+</view>
+
+
+
+
+<view catchtap='navBarTap' class="custom flex_center" style="padding-top:{{statusBarHeight+5}}px">
+  <image src="../../position.png"/>
+  <view class="position">
+      <view class="city">{{position.myPosition.city||"定位中···"}}</view>
+      <view class="street" >{{position.myPosition.city?position.myPosition.district+position.myPosition.street:""}}</view>
+  </view>
+</view>
+<!-- <view class="empty_custom" style="padding-top:{{statusBarHeight}}px">这是tabBar</view> -->

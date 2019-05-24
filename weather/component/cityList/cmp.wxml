@@ -1,0 +1,9 @@
+<view class="container" catchtap='toDetail' data-city="{{city}}">
+  <view class="city">{{city}}</view>
+  <view class="weather">
+    <text space="nbsp">{{weather.tem}}℃     {{weather.wea}}</text>
+  </view>
+  <view class="wind">{{weather.win}}{{weather.win_speed}} · 空气质量{{weather.air_level}}</view>
+
+  <image class="weaPic"  src="{{weather.wea_img?'../../'+weather.wea_img+'.png':''}}"/>
+</view>

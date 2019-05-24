@@ -1,0 +1,75 @@
+/**app.wxss**/
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+.container {
+  display: flex;
+  width:100%;
+  height:600rpx;
+  background:#ddd;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+
+.custom{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  /* height: 45px; */
+  height:90rpx;
+  background:white;
+  z-index: 999;
+  text-indent:20rpx;
+  /* line-height:45px; */
+  line-height:90rpx;
+}
+.custom image{
+  /* width:45px;
+  height:45px; */
+  width:90rpx;
+  height:90rpx;
+  float:left;
+  margin-left:30rpx;
+}
+.custom text{
+  color: black;
+  font-size: 40rpx;
+  max-width: 280rpx;
+  font-weight: bolder;
+  text-align: center
+}
+
+.custom .position{
+  /* height:45px; */
+  height:90rpx;
+  box-sizing:border-box;
+  float:left;
+}
+.custom .position .city{
+  /* height:25px; */
+  height:50rpx;
+  line-height:50rpx;
+  font-size:34rpx;
+  /* line-height:25px; */
+}
+.custom .position .street{
+  /* height:15px; */
+  height:30rpx;
+  color:gray;
+  /* margin-top:2px; */
+  margin-top:4rpx;
+  /* line-height:15px; */
+  line-height:30rpx;
+  font-size:28rpx;
+}
+
+.empty_custom{
+  /* height: 45px; */
+  height:90rpx;
+  width: 100%;
+}

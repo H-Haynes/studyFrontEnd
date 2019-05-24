@@ -1,0 +1,42 @@
+<view  class="custom flex_center"  style="padding-top:{{statusBarHeight+5}}px">
+  <text class="back" decode="true" catchtap='backPage'>&lt;</text>
+</view>
+<view class="empty_custom" style="padding-top:{{statusBarHeight*2}}rpx"></view>
+
+<view class="city-list">
+  <city  wx:for="{{cityList}}" wx:key="*this" city="{{item}}" />
+</view>
+
+
+<view class="add" wx:if='{{showAdd}}'>
+  <view class="addWrap">
+    <view class="title">新增城市</view>
+    <view class="addBox">
+      <input class="search" bindinput="inputCity" placeholder="请输入城市名" type="text" maxlength='{{8}}'></input>
+      <view class="tuijianCity">
+          <view class="tip">热门城市</view>
+          <cityname wx:for="{{hotCityList}}" data-name="{{item}}" cityname="{{item}}" wx:key="*this" catchtap="addTuijianCity"/>
+      </view>
+    </view>
+
+    <button class="submit" catchtap='addCityToList'>添加</button>
+  </view>
+</view>
+
+<view class="showManage" wx:if="{{showManage}}">
+  <view class="manage-wrap">
+      <view class="title">管理列表</view>
+      <view class="city-data">
+          <block wx:for="{{cityList}}" wx:key="*this">
+              <view class="city-item">
+                  <text class="cname">{{item}}</text><text   class="delete" data-city='{{item}}' catchtap='deleteCity' size='mini'>删除</text>
+              </view>
+          </block>
+      </view>
+
+      <button class="complete" catchtap='hideManageBox'>完成</button>
+  </view>
+</view>
+<view class="editCity" catchtap='showManageBox'>管理城市</view>
+<view class="addCity" catchtap='showAddBox'>添加城市</view>
+

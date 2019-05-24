@@ -1,0 +1,30 @@
+/* component/cityList/cmp.wxss */
+.container{
+  width:100%;
+  height:200rpx;
+  background:whitesmoke;
+  border-radius: 30rpx;
+  padding:20rpx 30rpx;
+  box-sizing:border-box;
+  color:rgb(71, 108, 179);
+  margin:20rpx 0;
+  position: relative;
+}
+.city{
+  font-size:46rpx;
+  font-weight: 900
+}
+.weather{
+  font-size:40rpx;
+  font-weight: 500
+}
+.wind{
+  font-size:30rpx;
+}
+.weaPic{
+  position:absolute;
+  right:0;
+  top:0;
+  width:200rpx;
+  height:200rpx;
+}

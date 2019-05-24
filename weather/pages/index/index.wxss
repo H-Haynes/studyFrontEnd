@@ -1,0 +1,206 @@
+page{
+  background:whitesmoke;
+  width:750rpx;
+  height:100%;
+  /* overflow: hidden; */
+}
+
+.day{
+  display: inline-block;
+  white-space: normal
+}
+.dateList{
+  white-space: nowrap;
+  border-top: 1rpx solid gray;
+  border-bottom: 1rpx solid black;
+}
+
+.wenduInfo{
+  width:100%;
+  height:500rpx;
+  background-image:white url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558034960166&di=1d349eae66359f8c0d0d34065c11df5c&imgtype=0&src=http%3A%2F%2Fimg.mp.sohu.com%2Fupload%2F20170727%2F9549e8b71daf4d78abd62fbb7aa68718.png);
+  background-size:100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height:60rpx;
+  /* color:orangered;*/
+  position:relative;
+}
+
+.wenduInfo .mainInfo{
+  display: flex;
+  position:relative;
+  left:-30rpx;
+  top:30rpx;
+  background:rgba(0,0,0,.3);
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  width:300rpx;
+  height:300rpx;
+  color:white;
+  border-radius:50% 50%;
+  border:1rpx solid gray;
+  text-shadow:2rpx 2rpx 0 gray;
+}
+
+.wendu{
+  font-size:50rpx;
+  font-weight:bolder;
+}
+.cityName{
+  font-weight:900;
+  font-size:50rpx;
+  /* transform: translateY(-150%); */
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  top:-60rpx;
+  letter-spacing: 20rpx;
+  text-shadow:2rpx 2rpx 0 gray;
+
+}
+.wind-wrap{
+  width:100%;
+  position:absolute;
+  animation: showwind 10s linear alternate infinite;
+}
+.wind{
+  height:60rpx;
+  font-size:30rpx;
+  width:100%;
+  overflow: hidden;
+  position: relative;
+  color:#34c9e4
+}
+
+.life{
+  position:absolute;
+  top:0rpx;
+  right:0rpx;
+  font-size:28rpx;
+  width:250rpx;
+  background:rgba(0, 102, 128,.4);
+  /* border-radius: 50% 50% */
+}
+
+.wenduRange{
+  font-size:30rpx;
+  color:lightblue;
+  position:absolute;
+  top:20rpx;
+  left:20rpx;
+}
+
+.dataFrom{
+  font-size:24rpx;
+  color:black;
+  position:absolute;
+  right:30rpx;
+  bottom:10rpx;
+}
+.dataFrom view{
+  text-align: left;
+  height:30rpx;
+  line-height:30rpx;
+}
+.dataFrom view text{
+  margin-left:20rpx;
+  color:gray;
+}
+/* 
+.air,.uv,.cloth,.car{
+  width:250rpx;
+  background:green
+} */
+
+
+.life .lifeName{
+  background:rgba(10, 121, 205,.1);
+  width:150rpx;
+  float:left;
+  text-align:right;
+  color:white;
+}
+.life .lifeInfo{
+  color:cyan;
+}
+.active{
+  background:gray;
+  color:white;
+}
+
+.wenduChange{
+  width:700rpx;
+  margin:30rpx 25rpx;
+  border-radius: 30rpx;
+  box-sizing: border-box;
+  /* border:1rpx solid red; */
+  padding-bottom:30rpx;
+  background:#ddd;
+}
+
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.lineTitle{
+  margin-top:20rpx;
+  font-weight:bolder;
+  text-align: center;
+  height:100rpx;
+  line-height:100rpx;
+}
+
+
+.rainMap{
+  width:700rpx;
+  height:600rpx;
+  margin:30rpx 25rpx;
+  background:#ddd;
+  box-sizing: border-box;
+  border-radius:30rpx;
+  padding:30rpx 20rpx;
+}
+.mapTitle{
+  font-weight: bolder;
+  height:60rpx;
+  line-height:60rpx;
+  text-align: center;
+  margin-bottom:20rpx;
+}
+
+.rainMap .mapList{
+    width:100%;
+    height:450rpx;
+}
+.rainMap image{
+  width:100%;
+  height:100%;
+}
+
+
+
+
+@keyframes showwind{
+  0%{
+  }
+  20%{
+    top:0%
+  }
+  40%{
+    top:-100%
+  }
+  60%{
+    top:-100%
+  }
+  80%{
+    top:-200%
+  }
+  100%{
+    top:-200%
+  }
+}

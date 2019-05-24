@@ -1,0 +1,9 @@
+<!--component/alarm/cmp.wxml-->
+<view class="container">
+  <view class="title">天气预警</view>
+  <view class="info">
+      <view wx:for="{{alarms}}" wx:key="*this">
+        <text>{{item}}</text>
+      </view>
+  </view>
+</view>

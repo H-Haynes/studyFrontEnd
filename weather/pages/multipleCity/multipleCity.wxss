@@ -1,0 +1,118 @@
+/* pages/multipleCity/multipleCity.wxss */
+page{
+  width:100%;
+  height:100%;
+  padding:20rpx;
+  background:#ddd;
+  box-sizing:border-box;
+
+}
+.custom{
+  background:whitesmoke;
+}
+.custom .back{
+  float:left;
+  font-size:50rpx;
+  color:gray;
+  /* padding-left:20rpx; */
+  width:100rpx
+}
+
+.editCity,.addCity{
+  height:80rpx;
+  background:whitesmoke;
+  line-height:80rpx;
+  margin:20rpx 0;
+  border-radius:20rpx;
+  text-align: center;
+  color:#777;
+  font-size:34rpx;
+}
+
+.addWrap,.manage-wrap{
+  color:white;
+  width:600rpx;
+  height:1000rpx;
+  position: relative;
+
+  padding:50rpx 30rpx;
+  box-sizing: border-box;
+  border-radius:50rpx;
+
+  background:rgba(0,0,0,.9);
+}
+.addWrap .title,.manage-wrap{
+  text-align: center;
+  margin-bottom:30rpx;
+}
+.addBox input{
+  border:1rpx solid gray;
+}
+.addBox .tuijianCity{
+  /* border:1rpx solid red; */
+  margin-top:50rpx;
+  word-break: break-all;
+}
+.tuijianCity .tip{
+  height:50rpx;
+  line-height:50rpx;
+  font-weight: bold;
+  font-style: italic
+}
+.search{
+  padding-left:20rpx;
+}
+
+.add,.showManage{
+  width:100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:fixed;
+  top:0;
+  left:0;
+  background:rgba(0,0,0,.2);
+}
+
+.submit ,.complete{
+  position: absolute;
+  bottom:20rpx;
+  width:300rpx;
+  height:80rpx;
+  border-radius:50rpx;
+  background:rgba(255,255,255,.6);
+  left:50%;
+  transform: translateX(-50%)
+}
+
+.city-data{
+  /* border:1rpx solid green; */
+  width:100%;
+  height:700rpx;
+  margin:30rpx 0;
+  overflow: scroll;
+}
+.city-data .city-item{
+  height:80rpx;
+  line-height:80rpx;
+  margin:20rpx 0;
+}
+.city-data .city-item .cname{
+  display: inline-block;
+  width:60%;
+  text-align: center;
+box-sizing: border-box;
+border:1rpx solid whitesmoke
+}
+.city-data .city-item .delete{
+  display: inline-block;
+  width:30%;
+  box-sizing: border-box;
+  text-align: center;
+  margin-left:8%;
+  color:white;
+  background:rgba(185, 47, 47, 0.829);
+}
+
+

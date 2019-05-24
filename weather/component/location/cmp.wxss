@@ -1,0 +1,10 @@
+.container{
+  width:100%;
+  background:white;
+  color:black;
+  height:80rpx;
+  font-size:40rpx;
+  font-weight: bold;
+  text-align: center;
+  line-height:80rpx;
+}
