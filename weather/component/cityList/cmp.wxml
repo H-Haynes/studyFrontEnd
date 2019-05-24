@@ -5,5 +5,5 @@
   </view>
   <view class="wind">{{weather.win}}{{weather.win_speed}} · 空气质量{{weather.air_level}}</view>
 
-  <image class="weaPic"  src="{{weather.wea_img?'../../'+weather.wea_img+'.png':''}}"/>
+  <image class="weaPic"  src="{{weather.wea_img?'../../image/'+weather.wea_img+'.png':''}}"/>
 </view>
