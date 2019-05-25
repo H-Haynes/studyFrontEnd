@@ -9,7 +9,7 @@ Page({
     firstLoad:true,
     statusBarHeight: app.globalData.statusBarHeight,
     cityList:[],
-    hotCityList:["北京","上海","深圳","广州","杭州","重庆","成都","福州","三亚","香港","澳门"],
+    hotCityList:["北京","上海","深圳","广州","杭州","重庆","成都","福州","三亚","香港","澳门","珠海"],
     showAdd:false,
     showManage:false,
     inputWords:"",      //搜索城市的输入框值
@@ -19,12 +19,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
     const self = this;
+
     this.getCache();
     let str=options.city.slice(0,options.city.length-1);
+    this.getCityNameList();
     //将当前定位位置加入列表
     this.addCity(str);
-    this.setData({
+
+    this.setData({  //第一次加载当定位城市已经在列表则不提示信息
       firstLoad:false
     })
   },
@@ -126,8 +130,22 @@ Page({
   },
   addCityToList(){//添加城市,需要向数组unshift，并且隐藏add模块
     //功能未完善，未校验输入的值，可能非城市导致获取到的数据位默认数据
-    this.addCity(this.data.inputWords);
-    this.hideAddBox();
+    //检索城市列表,对输入的城市和json表检查，没找到则不添加
+    const self=this;
+    //检索是否有输入的名字：
+        if(self.data.cityNameList.includes(self.data.inputWords)){
+            self.addCity(self.data.inputWords);
+            self.hideAddBox();
+        }else{
+          wx.showToast({
+            title: '没有匹配城市',
+            icon:"none"
+          })
+        }
+      
+    
+    // this.addCity(this.data.inputWords);
+    // this.hideAddBox();
   },
   deleteCity(e){
       let deleteTarget=e.currentTarget.dataset.city;
@@ -149,5 +167,20 @@ Page({
     let city=e.currentTarget.dataset.name;
     this.addCity(city);
     this.hideAddBox();
+  },
+  getCityNameList(){
+    const self=this;
+    wx.request({
+      url: 'https://mydata-1258971635.cos.ap-beijing.myqcloud.com/city.json',
+      success(res) {
+        let cityNameList = [];
+        res.data.forEach((ele) => {
+          cityNameList.push(ele.cityZh)
+        })
+        self.setData({
+          cityNameList
+        });
+      }
+    })
   }
 })
