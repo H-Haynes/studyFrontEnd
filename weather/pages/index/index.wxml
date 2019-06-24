@@ -75,7 +75,7 @@
 
 
 <view catchtap='navBarTap' class="custom flex_center" style="padding-top:{{statusBarHeight+5}}px">
-  <image src="../../image/position.png"/>
+  <image src="../../position.png"/>
   <view class="position">
       <view class="city">{{position.myPosition.city||"定位中···"}}</view>
       <view class="street" >{{position.myPosition.city?position.myPosition.district+position.myPosition.street:""}}</view>

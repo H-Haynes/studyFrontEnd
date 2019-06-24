@@ -179,27 +179,9 @@ Page({
     })
   },
   navBarTap(){
-      //验证是否授权获取地理位置
-      const self=this;
-      wx.getSetting({
-        success(res){
-          if(!res.authSetting['scope.userLocation']){
-            //未被授权
-            wx.openSetting({
-              success(res){
-                self.getUserPosition();
-              }
-            })
-          }else{
-            //用户已授权
-            wx.navigateTo({
-              url: `../multipleCity/multipleCity?city=${self.data.position.myPosition.city}`,
-            })
-          }
-        }
+      wx.navigateTo({
+        url: `../multipleCity/multipleCity?city=${this.data.position.myPosition.city}`,
       })
-
-      
     
   },
   getMapList(){
